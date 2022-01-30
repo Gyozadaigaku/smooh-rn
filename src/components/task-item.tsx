@@ -120,7 +120,7 @@ const TaskItem = (props: Props) => {
             strikethrough={isDone}
             onPress={onPressLabel}
           >
-            Task Item
+            {subject}
           </AnimatedTaskLabel>
         )}
       </HStack>
