@@ -12,6 +12,7 @@ import {
 } from 'native-base'
 import ThemeToggle from '../components/theme-toggle'
 import AnimatedCheckbox from '../components/animated-checkbox'
+import TaskItem from '../components/task-item'
 
 export default function MainScreen() {
   const [checked, setChecked] = useState(false)
@@ -27,14 +28,8 @@ export default function MainScreen() {
     >
       <VStack space={5} alignItems="center">
         <Box w="100px" h="100px">
-          <Pressable onPress={handlePressCheckbox}>
-            <AnimatedCheckbox
-              checked={checked}
-              highlightColor="#000"
-              checkmarkColor="red"
-              boxOutlineColor="#000"
-            />
-          </Pressable>
+          <TaskItem isDone={checked} onToggleCheckbox={handlePressCheckbox} />
+          <AnimatedCheckbox checked={checked} />
         </Box>
         <Box>
           <Text>ハローワーク</Text>
