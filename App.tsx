@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
 import AppContainer from './src/components/app-container'
 import MainScreen from './src/screens/main-screen'
 
