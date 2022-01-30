@@ -1,11 +1,12 @@
 import React, { useCallback, useState } from 'react'
-import { Pressable } from 'react-native'
-import { Icon, Center, VStack, useColorModeValue, Fab } from 'native-base'
+import { Icon, VStack, useColorModeValue, Fab } from 'native-base'
 import { AntDesign } from '@expo/vector-icons'
 import AnimatedColorBox from '../components/animated-color-box'
 import ThemeToggle from '../components/theme-toggle'
 import TaskList from '../components/task-list'
 import shortid from 'shortid'
+import Masthead from '../components/masthead'
+import NavBar from '../components/navbar'
 
 const initialData = [
   {
@@ -65,7 +66,21 @@ export default function MainScreen() {
       bg={useColorModeValue('warmGray.50', 'primary.900')}
       w="full"
     >
-      <VStack space={5} alignItems="center" w="full">
+      <Masthead
+        title="KonnichiWhat's up!"
+        image={require('../assets/masthead.png')}
+      >
+        <NavBar />
+      </Masthead>
+      <VStack
+        flex={1}
+        space={1}
+        bg={useColorModeValue('warmGray.50', 'primary.900')}
+        mt="-20px"
+        borderTopLeftRadius="20px"
+        borderTopRightRadius="20px"
+        pt="20px"
+      >
         <TaskList
           data={data}
           onToggleItem={handleToggleTaskItem}
