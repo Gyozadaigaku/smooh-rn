@@ -2,7 +2,6 @@ import React, { useCallback, useState } from 'react'
 import { Icon, VStack, useColorModeValue, Fab } from 'native-base'
 import { AntDesign } from '@expo/vector-icons'
 import AnimatedColorBox from '../components/animated-color-box'
-import ThemeToggle from '../components/theme-toggle'
 import TaskList from '../components/task-list'
 import shortid from 'shortid'
 import Masthead from '../components/masthead'
@@ -90,7 +89,6 @@ export default function MainScreen() {
           onRemoveItem={handleRemoveItem}
           editingItemId={editingItemId}
         />
-        <ThemeToggle />
       </VStack>
       <Fab
         position="absolute"
